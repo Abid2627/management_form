@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import JoinManagementForm
+from .models import JoinManagement
 
 def management_join_form(request):
     if request.method == 'POST':
@@ -17,3 +18,10 @@ from django.shortcuts import render
 
 def success_view(request):
     return render(request, 'join_management/success.html')
+
+
+
+def display_data(request):
+    data = JoinManagement.objects.all()
+    return render(request, 'join_management/display_data.html', {'data': data})
+

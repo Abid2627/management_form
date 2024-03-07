@@ -23,9 +23,10 @@ from django.views.generic import RedirectView
 
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url='management/join/')),  # Redirect from root to form URL
-    path('management/', include('join_management.urls')),  # Include your app's URLs
+    path('management/', include('join_management.urls')), 
+     # Include your app's URLs
     # Add more URL patterns as needed
 ]
 
